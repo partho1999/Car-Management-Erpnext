@@ -1,0 +1,63 @@
+
+
+{
+    "depends_on": "vehicle_management",
+    "doctype": "Report",
+    "name": "Vehicle Details Report",
+    "is_standard": 1,
+    "ref_doctype": "Vehicle Details",
+    "script": "vehicle_management.vehicle_management.report.vehicle_details_report.vehicle_details_report",
+    "filters": [
+        {
+            "fieldname": "chassis_no",
+            "fieldtype": "Data",
+            "label": "Chassis No"
+        },
+        {
+            "fieldname": "car_model",
+            "fieldtype": "Link",
+            "options": "Car Model",
+            "label": "Car Model"
+        },
+        {
+            "fieldname": "model_year",
+            "fieldtype": "Link",
+            "options": "Model Year",
+            "label": "Model Year"
+        },
+        {
+            "fieldname": "auction_grade",
+            "fieldtype": "Link",
+            "options": "Auction Grade",
+            "label": "Auction Grade"
+        },
+        {
+            "fieldname": "color",
+            "fieldtype": "Link",
+            "options": "Color",
+            "label": "Color"
+        },
+        {
+            "fieldname": "vehicle_status",
+            "fieldtype": "Data",
+            "label": "Vehicle Status"
+        }
+    ],
+    "fields": [
+        "chassis_number",
+        "car_model",
+        "model_year",
+        "shape",
+        "auction_grade",
+        "package",
+        "color",
+        "mileage",
+        "cc",
+        "seat_capacity",
+        "origin_country",
+        "vehicle_status",
+        "sale_price",
+        "grand_total"
+    ]
+}
+

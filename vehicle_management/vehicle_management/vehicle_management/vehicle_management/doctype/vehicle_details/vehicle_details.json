@@ -1,0 +1,120 @@
+{
+ "depends_on": "vehicle_management",
+ "doctype": "DocType",
+ "name": "Vehicle Details",
+ "description": "Details of Vehicles",
+ "module": "Vehicle Management",
+ "is_single": 0,
+ "is_tree": 0, 
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-04 01:55:12.150939",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "car_name"
+ ],
+ "keyword_fields": ["chassis_number"],
+ "fields": [
+        {
+            "fieldname": "car_model",
+            "fieldtype": "Link",
+            "options": "Car Model",
+            "label": "Car Model",
+            "reqd": 1
+        },
+        {
+            "fieldname": "chassis_number",
+            "fieldtype": "Data",
+            "label": "Chassis Number",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "model_year",
+            "fieldtype": "Link",
+            "options": "Model Year",
+            "label": "Model Year",
+            "reqd": 1
+        },
+        {
+            "fieldname": "shape",
+            "fieldtype": "Select",
+            "options": "Old\nNew",
+            "label": "Shape",
+            "reqd": 1
+        },
+        {
+            "fieldname": "auction_grade",
+            "fieldtype": "Link",
+            "options": "Auction Grade",
+            "label": "Auction Grade",
+            "reqd": 1
+        },
+        {
+            "fieldname": "package",
+            "fieldtype": "Data",
+            "label": "Package"
+        },
+        {
+            "fieldname": "color",
+            "fieldtype": "Link",
+            "options": "Color",
+            "label": "Color",
+            "reqd": 1
+        },
+        {
+            "fieldname": "mileage",
+            "fieldtype": "Float",
+            "label": "Mileage"
+        },
+        {
+            "fieldname": "cc",
+            "fieldtype": "Float",
+            "label": "CC"
+        },
+        {
+            "fieldname": "seat_capacity",
+            "fieldtype": "Int",
+            "label": "Seat Capacity"
+        },
+        {
+            "fieldname": "origin_country",
+            "fieldtype": "Link",
+            "options": "Country",
+            "label": "Origin Country",
+            "reqd": 1
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "label": "Description"
+        }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-04 02:08:31.561002",
+ "modified_by": "Administrator",
+ "module": "Vehicle Management",
+ "name": "Vehicle Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

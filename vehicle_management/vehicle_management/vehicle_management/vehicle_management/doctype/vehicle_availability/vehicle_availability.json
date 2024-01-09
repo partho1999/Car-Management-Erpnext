@@ -1,0 +1,162 @@
+{
+ "depends_on": "vehicle_management",
+ "doctype": "DocType",
+ "name": "Vehicle Availability",
+ "description": "Form to track vehicle availability",
+ "is_submittable": 1,
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-04 10:44:58.888525",
+ "default_view": "List",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test"
+ ],
+ "fields": [
+  {
+            "fieldname": "series",
+            "fieldtype": "Series",
+            "options": "Vehicle Availability-.YYYY.-.#####",
+            "label": "Series",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "posting_date",
+            "fieldtype": "Date",
+            "label": "Posting Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "chassis_number",
+            "fieldtype": "Link",
+            "options": "Vehicle Details",
+            "label": "Vehicle Chassis No.",
+            "reqd": 1,
+            "on_change": "refresh_vehicle_info"
+        },
+        {
+            "fieldname": "vehicle_name",
+            "fieldtype": "Data",
+            "label": "Vehicle Name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "model_year",
+            "fieldtype": "Link",
+            "options": "Model Year",
+            "label": "Model Year",
+            "read_only": 1
+        },
+        {
+            "fieldname": "shape",
+            "fieldtype": "Data",
+            "label": "Shape",
+            "read_only": 1
+        },
+        {
+            "fieldname": "auction_grade",
+            "fieldtype": "Link",
+            "options": "Auction Grade",
+            "label": "Auction Grade",
+            "read_only": 1
+        },
+        {
+            "fieldname": "color",
+            "fieldtype": "Link",
+            "options": "Color",
+            "label": "Color",
+            "read_only": 1
+        },
+        {
+            "fieldname": "mileage",
+            "fieldtype": "Float",
+            "label": "Mileage",
+            "read_only": 1
+        },
+        {
+            "fieldname": "cc",
+            "fieldtype": "Float",
+            "label": "CC",
+            "read_only": 1
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "label": "Description",
+            "read_only": 1
+        }
+ ],
+ "tabs": [
+        {
+            "label": "Car Availability Status",
+            "fields": [
+                {
+                    "fieldname": "status",
+                    "fieldtype": "Select",
+                    "options": "Empty\nPort\nOnship\nInhouse\nWorkshop\nOther",
+                    "label": "Status",
+                    "reqd": 1,
+                    "on_change": "refresh_status_fields"
+                },
+                {
+                    "fieldname": "port_location",
+                    "fieldtype": "Link",
+                    "options": "Port Location",
+                    "label": "Port Location"
+                },
+                {
+                    "fieldname": "shed_number",
+                    "fieldtype": "Data",
+                    "label": "Shed Number"
+                },
+                {
+                    "fieldname": "ship_details",
+                    "fieldtype": "Data",
+                    "label": "Ship Details"
+                },
+                {
+                    "fieldname": "in_house_address",
+                    "fieldtype": "Data",
+                    "label": "In House Address"
+                },
+                {
+                    "fieldname": "workshop_address",
+                    "fieldtype": "Data",
+                    "label": "Workshop Address"
+                },
+                {
+                    "fieldname": "other_details",
+                    "fieldtype": "Text",
+                    "label": "Other Details"
+                }
+            ]
+        }
+    ],
+    "script": "vehicle_management.vehicle_management.doctype.vehicle_availability.vehicle_availability",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-04 10:44:58.888525",
+ "modified_by": "Administrator",
+ "module": "Vehicle Management",
+ "name": "Vehicle Availability",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

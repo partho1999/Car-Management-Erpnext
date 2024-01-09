@@ -1,0 +1,168 @@
+{
+ "depends_on": "vehicle_management",  
+ "name": "Vehicle Price",
+ "description": "Form to manage vehicle pricing",
+ "is_submittable": 1,
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-04 11:23:17.992993",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test"
+ ],
+ "fields": [
+  {
+            "fieldname": "series",
+            "fieldtype": "Series",
+            "options": "Vehicle Price-.YYYY.-.#####",
+            "label": "Series",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "posting_date",
+            "fieldtype": "Date",
+            "label": "Posting Date",
+            "reqd": 1
+        }
+ ],
+ "sections": [
+        {
+            "label": "Vehicle Info",
+            "fields": [
+                {
+                    "fieldname": "vehicle_chassis_no",
+                    "fieldtype": "Link",
+                    "options": "Vehicle Details",
+                    "label": "Vehicle Chassis No.",
+                    "reqd": 1,
+                    "on_change": "refresh_vehicle_info"
+                },
+                {
+                    "fieldname": "vehicle_name",
+                    "fieldtype": "Data",
+                    "label": "Vehicle Name",
+                    "read_only": 1
+                }
+            ]
+        },
+        {
+            "label": "Vehicle Price",
+            "fields": [
+                {
+                    "fieldname": "company_price",
+                    "fieldtype": "Currency",
+                    "label": "Company Price",
+                    "reqd": 1,
+                    "on_change": "calculate_sale_price"
+                },
+                {
+                    "fieldname": "customer_price",
+                    "fieldtype": "Currency",
+                    "label": "Customer Price",
+                    "reqd": 1,
+                    "on_change": "calculate_sale_price"
+                },
+                {
+                    "fieldname": "sale_price",
+                    "fieldtype": "Currency",
+                    "label": "Sale Price",
+                    "read_only": 1
+                }
+            ]
+        },
+        {
+            "label": "Other Vehicle Items",
+            "fields": [
+                {
+                    "fieldname": "other_vehicle_items",
+                    "fieldtype": "Table",
+                    "label": "Other Vehicle Items",
+                    "fields": [
+                        {
+                            "fieldname": "item",
+                            "fieldtype": "Link",
+                            "options": "Item",
+                            "label": "Item",
+                            "reqd": 1,
+                            "on_change": "calculate_amount"
+                        },
+                        {
+                            "fieldname": "quantity",
+                            "fieldtype": "Float",
+                            "label": "Quantity",
+                            "reqd": 1,
+                            "on_change": "calculate_amount"
+                        },
+                        {
+                            "fieldname": "rate",
+                            "fieldtype": "Currency",
+                            "label": "Rate",
+                            "reqd": 1,
+                            "on_change": "calculate_amount"
+                        },
+                        {
+                            "fieldname": "amount",
+                            "fieldtype": "Currency",
+                            "label": "Amount",
+                            "read_only": 1
+                        }
+                    ]
+                },
+                {
+                    "fieldname": "total_quantity",
+                    "fieldtype": "Float",
+                    "label": "Total Quantity",
+                    "read_only": 1
+                },
+                {
+                    "fieldname": "total_amount",
+                    "fieldtype": "Currency",
+                    "label": "Total Amount",
+                    "read_only": 1
+                }
+            ]
+        },
+        {
+            "label": "Totals",
+            "fields": [
+                {
+                    "fieldname": "grand_total",
+                    "fieldtype": "Currency",
+                    "label": "Grand Total",
+                    "read_only": 1,
+                    "on_change": "calculate_grand_total"
+                }
+            ]
+        }
+    ],
+    "script": "vehicle_management.vehicle_management.doctype.vehicle_price.vehicle_price",
+    
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-04 11:23:17.992993",
+ "modified_by": "Administrator",
+ "module": "Vehicle Management",
+ "name": "Vehicle Price",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
